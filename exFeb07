@@ -1,0 +1,12 @@
+(define (sumlist L)
+	; Returns the sum of the numbers in L
+	(cond 	((null? L) 0)
+		(else (+ (car L) (sumlist (cdr L))))))
+
+(define (add_pairs x y)
+	; Takes two lists and returns the pairwise sum.
+	; Assumes that the lists are the same length.
+
+	(cond 	((null? x) '())
+		(else 	(cons 	(+ (car x) (car y))
+				(add_pairs (cdr x) (cdr y))))))
